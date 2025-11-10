@@ -60,5 +60,8 @@ class Library:
 
     def search_book(self,title_or_author):
         for i in  self.list_of_books:
-            if i == title_or_author:
+            if i.title == title_or_author:
                 return True
+            elif i.author == title_or_author:
+                return True
+        return False    
