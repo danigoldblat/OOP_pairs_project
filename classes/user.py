@@ -3,4 +3,5 @@ class User:
         self.name = name
         self.id = id
         self.borrowed_books = []
-        
+    def __str__(self):
+        return f"name: {self.name} id: {self.id} "
