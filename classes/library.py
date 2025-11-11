@@ -1,14 +1,9 @@
-from classes.book import Book
-from classes.user import User
 
 class Library:
     def __init__(self):
         self.list_of_books = []
         self.list_of_users = []
-    def __str__(self):
-        return f"list_of_books: {self.list_of_books} list_of_users: {self.list_of_users }"
-    
-
+        
     def add_book(self,book):
         self.list_of_books.append(book)
 
@@ -26,14 +21,12 @@ class Library:
                         if user.id == user_id:
                             user.borrowed_books.append(book)
                             return f"You asked for the book.: {book_isbn} successfully"
-                        else:
-                             return "Does not identify user as"
-            else:
-                return "The book is not available."
+                        
+                        return "Does not identify user as"
+            
+            return "The book is not available."
     
                  
-
-
     def return_book(self,user_id, book_isbn):
         for book in self.list_of_books:
             if book.ISBN == book_isbn:
@@ -44,10 +37,7 @@ class Library:
                             user.borrowed_books.remove(book)
             
                 return "The book is already available."
-            
-            else:
-                return "Does not identify user as" 
-
+            return "Does not identify user as" 
 
 
     def list_available_books(self):
