@@ -1,9 +1,14 @@
 from classes.book import Book
 from classes.user import User
 from classes.library import Library
-
+from classes.data import Data
 
 library = Library()
+d = Data()
+d.write_json_book()
+d.write_json_user()
+d.read_json_book()
+d.read_json_user()
 
 choice = None
 while choice != "7":
